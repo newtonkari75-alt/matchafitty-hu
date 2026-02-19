@@ -7,29 +7,22 @@
     <!-- SEO BÁSICO - SEM RASTREADORES -->
     <title>Matcha Fitty - Természetes fogyás és anyagcsere-fokozás</title>
     <meta name="description" content="Matcha Fitty: A prémium japán matcha tea formula a gyorsabb anyagcseréért és a fenntartható fogyásért. -50% kedvezmény, ingyenes szállítás Magyarországon.">
-    <meta name="keywords" content="Matcha Fitty, matcha tea fogyás, zsírégető tea, anyagcsere fokozás, természetes fogyókúra, Matcha Fitty ár, fogyás éhezés nélkül">
     
     <!-- Open Graph (Facebook/Instagram/WhatsApp) -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Matcha Fitty - A legjobb megoldás a karcsú testért">
     <meta property="og:description" content="Fogyjon természetesen a Matcha Fitty-vel. Exkluzív 50%-os ajánlat Magyarországon.">
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Matcha Fitty - Különleges Ajánlat">
-    <meta name="twitter:description" content="Természetes zsírégetés és energia. Csak 11400 Ft ma!">
-
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <style>
-        /* Fonte do sistema de alta qualidade */
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-            overflow: hidden;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            overflow: hidden; /* Mantém foco no popup */
         }
 
         .site-background {
@@ -38,7 +31,7 @@
             background-image: url('images/matchafitty-mob.png');
             background-size: cover;
             background-position: center;
-            filter: brightness(0.65);
+            filter: brightness(0.6);
             z-index: 1;
         }
 
@@ -51,10 +44,11 @@
         .overlay {
             position: fixed;
             inset: 0;
-            background: rgba(0, 0, 0, 0.45);
-            backdrop-filter: blur(4px);
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
             z-index: 10;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             padding: 20px;
@@ -66,9 +60,9 @@
             max-width: 420px;
             border-radius: 28px;
             overflow: hidden;
-            box-shadow: 0 35px 70px -15px rgba(0, 0, 0, 0.7);
+            box-shadow: 0 35px 70px -15px rgba(0, 0, 0, 0.8);
             
-            /* Borda em Degradê Profissional */
+            /* Borda em Degradê solicitada (#3E2208 para #CB741E) */
             border: 4px solid transparent;
             background-image: linear-gradient(white, white), linear-gradient(135deg, #3E2208 0%, #CB741E 100%);
             background-origin: border-box;
@@ -91,9 +85,8 @@
             color: white;
             font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+            letter-spacing: 1.2px;
             font-size: 13px;
-            position: relative;
             margin: -1px; 
         }
 
@@ -117,14 +110,9 @@
             margin: 10px 0;
         }
 
-        @media (min-width: 400px) {
-            .new-price { font-size: 68px; }
-        }
-
         .currency {
             font-size: 26px;
             vertical-align: middle;
-            margin-left: 2px;
         }
 
         .discount-badge {
@@ -137,17 +125,16 @@
             font-size: 16px;
             margin-bottom: 12px;
             box-shadow: 0 4px 10px rgba(217, 27, 33, 0.3);
-            text-transform: uppercase;
         }
 
         .btn-cta {
             background: #00C853;
             color: white;
             display: block;
-            margin: 0 20px 25px;
+            margin: 0 15px 25px;
             padding: 20px;
             border-radius: 14px;
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 900;
             text-transform: uppercase;
             text-decoration: none;
@@ -159,17 +146,16 @@
         .btn-cta:hover {
             background: #00a846;
             transform: translateY(-4px);
-            box-shadow: 0 18px 30px -6px rgba(0, 200, 83, 0.6);
         }
 
         @keyframes pulse {
             0% { box-shadow: 0 0 0 0 rgba(0, 200, 83, 0.7); }
-            70% { box-shadow: 0 0 0 18px rgba(0, 200, 83, 0); }
+            70% { box-shadow: 0 0 0 15px rgba(0, 200, 83, 0); }
             100% { box-shadow: 0 0 0 0 rgba(0, 200, 83, 0); }
         }
 
         .limited-stock {
-            font-size: 12px;
+            font-size: 11px;
             text-transform: uppercase;
             color: #ef4444;
             font-weight: 800;
@@ -177,12 +163,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            gap: 6px;
         }
 
         .dot {
-            height: 10px;
-            width: 10px;
+            height: 8px;
+            width: 8px;
             background-color: #ef4444;
             border-radius: 50%;
             display: inline-block;
@@ -190,9 +176,93 @@
         }
 
         @keyframes blink {
-            0% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.3; transform: scale(0.8); }
-            100% { opacity: 1; transform: scale(1); }
+            0% { opacity: 1; }
+            50% { opacity: 0.3; }
+            100% { opacity: 1; }
+        }
+
+        /* Footer Links Nativo Hungria */
+        .legal-footer {
+            margin-top: 25px;
+            z-index: 20;
+            text-align: center;
+        }
+
+        .legal-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 10px;
+        }
+
+        .legal-links button {
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .legal-links button:hover {
+            color: #fff;
+        }
+
+        .disclaimer {
+            font-size: 9px;
+            color: rgba(255, 255, 255, 0.4);
+            max-width: 400px;
+            line-height: 1.4;
+        }
+
+        /* Modal System */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 100;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .modal-content {
+            background: #fff;
+            color: #333;
+            max-width: 700px;
+            width: 100%;
+            max-height: 80vh;
+            border-radius: 20px;
+            padding: 40px;
+            position: relative;
+            overflow-y: auto;
+            text-align: left;
+        }
+
+        .modal-content h2 { font-size: 24px; font-weight: 900; margin-bottom: 20px; color: #3E2208; text-transform: uppercase; }
+        .modal-content h3 { font-size: 18px; font-weight: 700; margin-top: 20px; margin-bottom: 10px; }
+        .modal-content p { font-size: 14px; line-height: 1.6; margin-bottom: 15px; color: #555; }
+        .modal-content ul { list-style: disc; padding-left: 20px; margin-bottom: 15px; font-size: 14px; }
+
+        .close-modal {
+            position: sticky;
+            top: 0;
+            float: right;
+            background: #3E2208;
+            color: #fff;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
         }
     </style>
 </head>
@@ -203,7 +273,6 @@
     <div class="overlay">
         
         <div class="offer-card">
-            <!-- Título mais direto e profissional -->
             <header class="offer-header">
                 Kizárólagos mai ajánlat Magyarországon
             </header>
@@ -222,24 +291,94 @@
                     Már csak 7 csomag maradt az akciós készletből
                 </div>
 
-                <!-- Link limpo conforme solicitado -->
                 <a href="https://tl-track.com/tracker/vXyN/" class="btn-cta">
                     IGÉNYLEM A KEDVEZMÉNYT
                 </a>
 
-                <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest leading-relaxed">
-                    Ingyenes Szállítás • Utánvét • Prémium Minőség
+                <p class="text-[9px] text-gray-400 font-bold uppercase tracking-widest">
+                    Utánvétes fizetés • 100% Természetes • Gyors szállítás
                 </p>
             </div>
 
-            <div class="bg-gray-50 p-5 border-t border-gray-100 flex justify-center gap-6">
-                <img src="https://cdn-icons-png.flaticon.com/512/7518/7518063.png" alt="EU Tanúsítvány" class="h-7 opacity-60">
-                <img src="https://cdn-icons-png.flaticon.com/512/2592/2592201.png" alt="Bio Matcha" class="h-7 opacity-60">
-                <img src="https://cdn-icons-png.flaticon.com/512/10046/10046314.png" alt="Prémium Minőség" class="h-7 opacity-60">
+            <div class="bg-gray-50 p-4 border-t border-gray-100 flex justify-center gap-6">
+                <img src="https://cdn-icons-png.flaticon.com/512/7518/7518063.png" alt="EU" class="h-6 opacity-60">
+                <img src="https://cdn-icons-png.flaticon.com/512/2592/2592201.png" alt="Bio" class="h-6 opacity-60">
+                <img src="https://cdn-icons-png.flaticon.com/512/10046/10046314.png" alt="Natural" class="h-6 opacity-60">
             </div>
+        </div>
+
+        <!-- Footer com Links de Política do Google Ads -->
+        <div class="legal-footer">
+            <nav class="legal-links">
+                <button onclick="openModal('terms')">Általános Szerződési Feltételek</button>
+                <button onclick="openModal('privacy')">Adatvédelmi Nyilatkozat</button>
+                <button onclick="openModal('contact')">Kapcsolat</button>
+            </nav>
+            <p class="disclaimer">
+                FONTOS: Ez a termék étrend-kiegészítő. Az eredmények egyénenként változhatnak és nem garantáltak. A weboldalon található információk nem helyettesítik az orvosi tanácsadást.
+            </p>
         </div>
 
     </div>
 
+    <!-- Modal para as informações legais -->
+    <div id="legalModal" class="modal-overlay" onclick="closeModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="close-modal" onclick="closeModal()">×</button>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <script>
+        const content = {
+            terms: `
+                <h2>Általános Szerződési Feltételek</h2>
+                <p>A matchafitty-hu.snn-goods.xyz címen található internetes áruház (a továbbiakban: "Eladó") nyilvános ajánlatot tesz közzé áruk távértékesítésére.</p>
+                <h3>1. Általános feltételek</h3>
+                <p>1.1. A vásárló megrendelése az Eladó weboldalán az ajánlat összes feltételének elfogadását jelenti.</p>
+                <p>1.2. Az Eladó fenntartja a jogot az ajánlat módosítására a vásárló előzetes értesítése nélkül.</p>
+                <h3>2. Árak és fizetés</h3>
+                <p>2.1. Minden termék ára feltüntetésre kerül a weboldalon.</p>
+                <p>2.2. A kiszállítás költségeit az ár nem tartalmazza.</p>
+                <p>2.3. A vásárló a termék átvételekor fizet készpénzben a futárnak (utánvét).</p>
+                <h3>3. Rendelési eljárás</h3>
+                <p>3.1. A megrendelés során a vásárló köteles megadni nevét, címét és telefonszámát.</p>
+                <p>3.2. A megrendelés megerősítése érdekében az Eladó telefonon felveszi a kapcsolatot a vásárlóval.</p>
+                <h3>4. Felelősség korlátozása</h3>
+                <p>Az Eladó nem vállal felelősséget a termékek nem megfelelő használatából eredő károkért. A termék hatása egyéni jellemzőktől függően eltérő lehet.</p>
+            `,
+            privacy: `
+                <h2>Adatvédelmi Nyilatkozat</h2>
+                <h3>1. A személyes adatok védelme</h3>
+                <p>A személyes adatok védelme és a magánélet tiszteletben tartása érdekében bevezettük biztonsági eszközeinket. Nem fogjuk használni és nem osztjuk meg adataidat az Adatvédelmi Irányelvben leírtakon kívül.</p>
+                <h3>2. Hogyan használjuk és védjük személyes adatait?</h3>
+                <p>Nem adjuk bérbe és nem adjuk el személyes adataidat másoknak. Az általunk gyűjtött személyes adatok lehetővé teszik számunkra a rendelések teljesítését és a tájékoztatást.</p>
+                <h3>3. Adatvédelem gyermekek számára</h3>
+                <p>Tudatosan nem gyűjtünk és nem kérünk személyes adatokat 18 éves kor aluliaktól.</p>
+                <p>Ha kérdése van, forduljon hozzánk bizalommal: <strong>complaincontact@gmail.com</strong></p>
+            `,
+            contact: `
+                <h2>Kapcsolat</h2>
+                <p>Ha kérdése van termékünkkel vagy megrendelésével kapcsolatban, vegye fel velünk a kapcsolatot az alábbi elérhetőségen:</p>
+                <p><strong>E-mail:</strong> complaincontact@gmail.com</p>
+                <p>Ügyfélszolgálatunk munkanapokon 9:00 és 18:00 között áll rendelkezésére.</p>
+            `
+        };
+
+        function openModal(type) {
+            document.getElementById('modalBody').innerHTML = content[type];
+            document.getElementById('legalModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('legalModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('legalModal')) {
+                closeModal();
+            }
+        }
+    </script>
 </body>
 </html>
