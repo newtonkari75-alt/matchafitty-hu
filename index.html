@@ -18,18 +18,26 @@
             padding: 0;
             height: 100%;
             font-family: 'Inter', sans-serif;
-            overflow: hidden; /* Evita scroll para parecer um popup fixo */
+            overflow: hidden; /* Evita scroll para manter o foco no popup */
         }
 
-        /* Fundo com a imagem oficial */
+        /* Fundo responsivo com as imagens da pasta /images/ */
         .site-background {
             position: fixed;
             inset: 0;
-            background-image: url('matchafitty-desk.png');
+            /* Mobile por padrão */
+            background-image: url('images/matchafitty-mob.png');
             background-size: cover;
             background-position: center;
-            filter: brightness(0.7); /* Escurece um pouco para o popup brilhar */
+            filter: brightness(0.7); /* Escurece o fundo para destacar o card */
             z-index: 1;
+        }
+
+        /* Troca para desktop em telas maiores */
+        @media (min-width: 1024px) {
+            .site-background {
+                background-image: url('images/matchafitty-desk.png');
+            }
         }
 
         /* Overlay para foco no modal */
@@ -45,7 +53,7 @@
             padding: 20px;
         }
 
-        /* O "Cookie" de Oferta / Card Central */
+        /* O Card de Oferta Centralizado */
         .offer-card {
             background: #ffffff;
             width: 100%;
@@ -53,7 +61,7 @@
             border-radius: 24px;
             overflow: hidden;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
-            border: 4px solid #f39c12; /* Tom de laranja/dourado do site */
+            border: 4px solid #f39c12; /* Tom de laranja do site oficial */
             animation: popIn 0.5s cubic-bezier(0.17, 0.89, 0.32, 1.28);
             position: relative;
             z-index: 20;
@@ -72,26 +80,30 @@
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 1px;
-            font-size: 14px;
+            font-size: 13px;
         }
 
         .price-container {
-            padding: 30px 20px;
+            padding: 25px 20px;
         }
 
         .old-price {
-            font-size: 20px;
+            font-size: 18px;
             color: #94a3b8;
             text-decoration: line-through;
             font-weight: 700;
         }
 
         .new-price {
-            font-size: 64px;
+            font-size: 56px;
             font-weight: 900;
             color: #1a2b4e;
             line-height: 1;
-            margin: 10px 0;
+            margin: 8px 0;
+        }
+
+        @media (min-width: 400px) {
+            .new-price { font-size: 64px; }
         }
 
         .currency {
@@ -106,19 +118,19 @@
             padding: 4px 12px;
             border-radius: 99px;
             font-weight: 900;
-            font-size: 18px;
-            margin-bottom: 15px;
+            font-size: 16px;
+            margin-bottom: 12px;
         }
 
-        /* Botão Verde Vibrante (Congruência total) */
+        /* Botão Verde Vibrante (Congruência total com o oficial) */
         .btn-cta {
             background: #00C853;
             color: white;
             display: block;
-            margin: 0 20px 30px;
-            padding: 20px;
+            margin: 0 20px 25px;
+            padding: 18px;
             border-radius: 12px;
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 900;
             text-transform: uppercase;
             text-decoration: none;
@@ -144,7 +156,7 @@
             text-transform: uppercase;
             color: #ef4444;
             font-weight: 800;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -169,7 +181,7 @@
 </head>
 <body>
 
-    <!-- Fundo representando o site oficial -->
+    <!-- Fundo dinâmico com alternância de dispositivo -->
     <div class="site-background"></div>
 
     <!-- Camada de Overlay e Popup -->
@@ -194,6 +206,7 @@
                     Csak 7 darab maradt készleten
                 </div>
 
+                <!-- Link para sua página de vendas oficial -->
                 <a href="https://SUA-PAGINA-OFICIAL.com" class="btn-cta">
                     KÉREM AZ AJÁNLATOT
                 </a>
@@ -205,9 +218,9 @@
 
             <!-- Selos discretos no rodapé do card -->
             <div class="bg-gray-50 p-4 border-t border-gray-100 flex justify-center gap-4">
-                <img src="https://cdn-icons-png.flaticon.com/512/7518/7518063.png" alt="EU" class="h-6 opacity-50">
-                <img src="https://cdn-icons-png.flaticon.com/512/2592/2592201.png" alt="Bio" class="h-6 opacity-50">
-                <img src="https://cdn-icons-png.flaticon.com/512/10046/10046314.png" alt="Natural" class="h-6 opacity-50">
+                <img src="https://cdn-icons-png.flaticon.com/512/7518/7518063.png" alt="EU" class="h-6 opacity-50" title="EU minősítés">
+                <img src="https://cdn-icons-png.flaticon.com/512/2592/2592201.png" alt="Bio" class="h-6 opacity-50" title="Természetes összetevők">
+                <img src="https://cdn-icons-png.flaticon.com/512/10046/10046314.png" alt="Natural" class="h-6 opacity-50" title="Garantált minőség">
             </div>
         </div>
 
