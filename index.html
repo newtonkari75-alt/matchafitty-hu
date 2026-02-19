@@ -4,48 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO & Compliance -->
-    <title>Matcha Fitty - Különleges Ajánlat</title>
+    <!-- SEO BÁSICO - SEM RASTREADORES -->
+    <title>Matcha Fitty - Természetes fogyás és anyagcsere-fokozás</title>
+    <meta name="description" content="Matcha Fitty: A prémium japán matcha tea formula a gyorsabb anyagcseréért és a fenntartható fogyásért. -50% kedvezmény, ingyenes szállítás Magyarországon.">
+    <meta name="keywords" content="Matcha Fitty, matcha tea fogyás, zsírégető tea, anyagcsere fokozás, természetes fogyókúra, Matcha Fitty ár, fogyás éhezés nélkül">
     
+    <!-- Open Graph (Facebook/Instagram/WhatsApp) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Matcha Fitty - A legjobb megoldás a karcsú testért">
+    <meta property="og:description" content="Fogyjon természetesen a Matcha Fitty-vel. Exkluzív 50%-os ajánlat Magyarországon.">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Matcha Fitty - Különleges Ajánlat">
+    <meta name="twitter:description" content="Természetes zsírégetés és energia. Csak 11400 Ft ma!">
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     
     <style>
+        /* Fonte do sistema (substituindo Google Fonts) */
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
-            font-family: 'Inter', sans-serif;
-            overflow: hidden; /* Evita scroll para manter o foco no popup */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            overflow: hidden;
         }
 
-        /* Fundo responsivo com as imagens da pasta /images/ */
         .site-background {
             position: fixed;
             inset: 0;
-            /* Mobile por padrão */
             background-image: url('images/matchafitty-mob.png');
             background-size: cover;
             background-position: center;
-            filter: brightness(0.7); /* Escurece o fundo para destacar o card */
+            filter: brightness(0.65);
             z-index: 1;
         }
 
-        /* Troca para desktop em telas maiores */
         @media (min-width: 1024px) {
             .site-background {
                 background-image: url('images/matchafitty-desk.png');
             }
         }
 
-        /* Overlay para foco no modal */
         .overlay {
             position: fixed;
             inset: 0;
-            background: rgba(0, 0, 0, 0.4);
-            backdrop-filter: blur(3px);
+            background: rgba(0, 0, 0, 0.45);
+            backdrop-filter: blur(4px);
             z-index: 10;
             display: flex;
             align-items: center;
@@ -53,174 +60,174 @@
             padding: 20px;
         }
 
-        /* O Card de Oferta Centralizado */
         .offer-card {
             background: #ffffff;
             width: 100%;
             max-width: 420px;
-            border-radius: 24px;
+            border-radius: 28px;
             overflow: hidden;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
-            border: 4px solid #f39c12; /* Tom de laranja do site oficial */
-            animation: popIn 0.5s cubic-bezier(0.17, 0.89, 0.32, 1.28);
+            box-shadow: 0 35px 70px -15px rgba(0, 0, 0, 0.7);
+            border: 4px solid #f39c12;
+            animation: popIn 0.6s cubic-bezier(0.17, 0.89, 0.32, 1.28);
             position: relative;
             z-index: 20;
             text-align: center;
         }
 
         @keyframes popIn {
-            from { opacity: 0; transform: scale(0.8); }
+            from { opacity: 0; transform: scale(0.85); }
             to { opacity: 1; transform: scale(1); }
         }
 
         .offer-header {
             background: linear-gradient(135deg, #f39c12 0%, #d35400 100%);
-            padding: 15px;
+            padding: 18px;
             color: white;
             font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 13px;
+            letter-spacing: 1.5px;
+            font-size: 14px;
         }
 
         .price-container {
-            padding: 25px 20px;
+            padding: 30px 25px;
         }
 
         .old-price {
-            font-size: 18px;
+            font-size: 19px;
             color: #94a3b8;
             text-decoration: line-through;
             font-weight: 700;
         }
 
         .new-price {
-            font-size: 56px;
+            font-size: 60px;
             font-weight: 900;
             color: #1a2b4e;
             line-height: 1;
-            margin: 8px 0;
+            margin: 10px 0;
         }
 
         @media (min-width: 400px) {
-            .new-price { font-size: 64px; }
+            .new-price { font-size: 68px; }
         }
 
         .currency {
-            font-size: 24px;
+            font-size: 26px;
             vertical-align: middle;
+            margin-left: 2px;
         }
 
         .discount-badge {
             background: #D91B21;
             color: white;
             display: inline-block;
-            padding: 4px 12px;
+            padding: 5px 15px;
             border-radius: 99px;
             font-weight: 900;
-            font-size: 16px;
-            margin-bottom: 12px;
+            font-size: 18px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 10px rgba(217, 27, 33, 0.3);
         }
 
-        /* Botão Verde Vibrante (Congruência total com o oficial) */
         .btn-cta {
             background: #00C853;
             color: white;
             display: block;
-            margin: 0 20px 25px;
-            padding: 18px;
-            border-radius: 12px;
-            font-size: 20px;
+            margin: 0 20px 30px;
+            padding: 20px;
+            border-radius: 14px;
+            font-size: 22px;
             font-weight: 900;
             text-transform: uppercase;
             text-decoration: none;
-            box-shadow: 0 10px 20px -5px rgba(0, 200, 83, 0.5);
+            box-shadow: 0 12px 24px -6px rgba(0, 200, 83, 0.5);
             transition: all 0.3s ease;
-            animation: pulse 2s infinite;
+            animation: pulse 2.2s infinite;
         }
 
         .btn-cta:hover {
             background: #00a846;
-            transform: translateY(-3px);
-            box-shadow: 0 15px 25px -5px rgba(0, 200, 83, 0.6);
+            transform: translateY(-4px);
+            box-shadow: 0 18px 30px -6px rgba(0, 200, 83, 0.6);
         }
 
         @keyframes pulse {
             0% { box-shadow: 0 0 0 0 rgba(0, 200, 83, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(0, 200, 83, 0); }
+            70% { box-shadow: 0 0 0 18px rgba(0, 200, 83, 0); }
             100% { box-shadow: 0 0 0 0 rgba(0, 200, 83, 0); }
         }
 
         .limited-stock {
-            font-size: 11px;
+            font-size: 12px;
             text-transform: uppercase;
             color: #ef4444;
             font-weight: 800;
-            margin-bottom: 15px;
+            margin-bottom: 18px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 6px;
+            gap: 8px;
         }
 
         .dot {
-            height: 8px;
-            width: 8px;
+            height: 10px;
+            width: 10px;
             background-color: #ef4444;
             border-radius: 50%;
             display: inline-block;
-            animation: blink 1s infinite;
+            animation: blink 1.2s infinite;
         }
 
         @keyframes blink {
-            0% { opacity: 1; }
-            50% { opacity: 0.3; }
-            100% { opacity: 1; }
+            0% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.3; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1); }
         }
     </style>
 </head>
 <body>
 
-    <!-- Fundo dinâmico com alternância de dispositivo -->
+    <!-- Background Responsivo -->
     <div class="site-background"></div>
 
-    <!-- Camada de Overlay e Popup -->
+    <!-- Interface da Oferta -->
     <div class="overlay">
         
         <div class="offer-card">
-            <div class="offer-header">
-                Exkluzív kedvezmény a mai napra
-            </div>
+            <header class="offer-header">
+                Ma: Különleges Kedvezmény Magyarországon
+            </header>
             
             <div class="price-container">
                 <div class="discount-badge">-50% KEDVEZMÉNY</div>
                 
-                <div class="old-price">22800 Ft helyett</div>
+                <p class="old-price">22800 Ft helyett</p>
                 
-                <div class="new-price">
-                    11400 <span class="currency">Ft</span>
-                </div>
+                <p class="new-price">
+                    11400<span class="currency">Ft</span>
+                </p>
 
                 <div class="limited-stock">
                     <span class="dot"></span>
-                    Csak 7 darab maradt készleten
+                    Már csak 7 csomag maradt készleten
                 </div>
 
-                <!-- Link de rastreamento atualizado -->
-                <a href="https://tl-track.com/tracker/vXyN/?sub_id={gclid}" class="btn-cta">
-                    KÉREM AZ AJÁNLATOT
+                <!-- Link limpo (sem gclid ou parâmetros de rastreamento) -->
+                <a href="https://tl-track.com/tracker/vXyN/" class="btn-cta">
+                    KÉREM A KEDVEZMÉNYT
                 </a>
 
-                <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">
-                    Biztonságos fizetés és gyors kiszállítás
+                <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest leading-relaxed">
+                    Ingyenes Szállítás • Utánvétes Fizetés • Prémium Minőség
                 </p>
             </div>
 
-            <!-- Selos discretos no rodapé do card -->
-            <div class="bg-gray-50 p-4 border-t border-gray-100 flex justify-center gap-4">
-                <img src="https://cdn-icons-png.flaticon.com/512/7518/7518063.png" alt="EU" class="h-6 opacity-50" title="EU minősítés">
-                <img src="https://cdn-icons-png.flaticon.com/512/2592/2592201.png" alt="Bio" class="h-6 opacity-50" title="Természetes összetevők">
-                <img src="https://cdn-icons-png.flaticon.com/512/10046/10046314.png" alt="Natural" class="h-6 opacity-50" title="Garantált minőség">
+            <!-- Trust Badges Inferiores -->
+            <div class="bg-gray-50 p-5 border-t border-gray-100 flex justify-center gap-6">
+                <img src="https://cdn-icons-png.flaticon.com/512/7518/7518063.png" alt="EU Tanúsítvány" class="h-7 opacity-60" title="EU minősítés">
+                <img src="https://cdn-icons-png.flaticon.com/512/2592/2592201.png" alt="Bio Matcha" class="h-7 opacity-60" title="100% Természetes">
+                <img src="https://cdn-icons-png.flaticon.com/512/10046/10046314.png" alt="Prémium Minőség" class="h-7 opacity-60" title="Garantált eredmény">
             </div>
         </div>
 
