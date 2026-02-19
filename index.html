@@ -23,7 +23,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     
     <style>
-        /* Fonte do sistema (substituindo Google Fonts) */
+        /* Fonte do sistema de alta qualidade */
         body, html {
             margin: 0;
             padding: 0;
@@ -61,13 +61,19 @@
         }
 
         .offer-card {
-            background: #ffffff;
+            background-color: #ffffff;
             width: 100%;
             max-width: 420px;
             border-radius: 28px;
             overflow: hidden;
             box-shadow: 0 35px 70px -15px rgba(0, 0, 0, 0.7);
-            border: 4px solid #f39c12;
+            
+            /* Borda em Degradê Profissional */
+            border: 4px solid transparent;
+            background-image: linear-gradient(white, white), linear-gradient(135deg, #3E2208 0%, #CB741E 100%);
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+            
             animation: popIn 0.6s cubic-bezier(0.17, 0.89, 0.32, 1.28);
             position: relative;
             z-index: 20;
@@ -80,24 +86,27 @@
         }
 
         .offer-header {
-            background: linear-gradient(135deg, #f39c12 0%, #d35400 100%);
+            background: linear-gradient(135deg, #3E2208 0%, #CB741E 100%);
             padding: 18px;
             color: white;
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            font-size: 14px;
+            font-size: 13px;
+            position: relative;
+            margin: -1px; 
         }
 
         .price-container {
-            padding: 30px 25px;
+            padding: 25px 25px;
         }
 
         .old-price {
-            font-size: 19px;
+            font-size: 18px;
             color: #94a3b8;
             text-decoration: line-through;
             font-weight: 700;
+            margin-bottom: -5px;
         }
 
         .new-price {
@@ -125,16 +134,17 @@
             padding: 5px 15px;
             border-radius: 99px;
             font-weight: 900;
-            font-size: 18px;
-            margin-bottom: 15px;
+            font-size: 16px;
+            margin-bottom: 12px;
             box-shadow: 0 4px 10px rgba(217, 27, 33, 0.3);
+            text-transform: uppercase;
         }
 
         .btn-cta {
             background: #00C853;
             color: white;
             display: block;
-            margin: 0 20px 30px;
+            margin: 0 20px 25px;
             padding: 20px;
             border-radius: 14px;
             font-size: 22px;
@@ -163,7 +173,7 @@
             text-transform: uppercase;
             color: #ef4444;
             font-weight: 800;
-            margin-bottom: 18px;
+            margin-bottom: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -188,15 +198,14 @@
 </head>
 <body>
 
-    <!-- Background Responsivo -->
     <div class="site-background"></div>
 
-    <!-- Interface da Oferta -->
     <div class="overlay">
         
         <div class="offer-card">
+            <!-- Título mais direto e profissional -->
             <header class="offer-header">
-                Ma: Különleges Kedvezmény Magyarországon
+                Kizárólagos mai ajánlat Magyarországon
             </header>
             
             <div class="price-container">
@@ -210,24 +219,23 @@
 
                 <div class="limited-stock">
                     <span class="dot"></span>
-                    Már csak 7 csomag maradt készleten
+                    Már csak 7 csomag maradt az akciós készletből
                 </div>
 
-                <!-- Link limpo (sem gclid ou parâmetros de rastreamento) -->
+                <!-- Link limpo conforme solicitado -->
                 <a href="https://tl-track.com/tracker/vXyN/" class="btn-cta">
-                    KÉREM A KEDVEZMÉNYT
+                    IGÉNYLEM A KEDVEZMÉNYT
                 </a>
 
                 <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest leading-relaxed">
-                    Ingyenes Szállítás • Utánvétes Fizetés • Prémium Minőség
+                    Ingyenes Szállítás • Utánvét • Prémium Minőség
                 </p>
             </div>
 
-            <!-- Trust Badges Inferiores -->
             <div class="bg-gray-50 p-5 border-t border-gray-100 flex justify-center gap-6">
-                <img src="https://cdn-icons-png.flaticon.com/512/7518/7518063.png" alt="EU Tanúsítvány" class="h-7 opacity-60" title="EU minősítés">
-                <img src="https://cdn-icons-png.flaticon.com/512/2592/2592201.png" alt="Bio Matcha" class="h-7 opacity-60" title="100% Természetes">
-                <img src="https://cdn-icons-png.flaticon.com/512/10046/10046314.png" alt="Prémium Minőség" class="h-7 opacity-60" title="Garantált eredmény">
+                <img src="https://cdn-icons-png.flaticon.com/512/7518/7518063.png" alt="EU Tanúsítvány" class="h-7 opacity-60">
+                <img src="https://cdn-icons-png.flaticon.com/512/2592/2592201.png" alt="Bio Matcha" class="h-7 opacity-60">
+                <img src="https://cdn-icons-png.flaticon.com/512/10046/10046314.png" alt="Prémium Minőség" class="h-7 opacity-60">
             </div>
         </div>
 
